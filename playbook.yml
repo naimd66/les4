@@ -1,0 +1,8 @@
+---
+- name: Configure web and database servers
+  hosts: all
+  become: true
+
+  roles:
+    - { role: webserver, when: "'webservers' in group_names" }
+    - { role: mysqlserver, when: "'dbservers' in group_names" }

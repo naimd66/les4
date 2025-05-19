@@ -1,0 +1,16 @@
+---
+- name: Install Apache
+  apt:
+    name: "{{ apache_package }}"
+    state: present
+  notify: restart apache
+
+- name: Install PHP
+  apt:
+    name: "{{ php_package }}"
+    state: present
+
+- name: Install PHP-MySQL
+  apt:
+    name: "{{ php_mysql_package }}"
+    state: present
